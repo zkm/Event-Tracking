@@ -1,0 +1,17 @@
+name: JS Syntax Check
+
+on:
+  push:
+    paths:
+      - 'tracking.js'
+  pull_request:
+    paths:
+      - 'tracking.js'
+
+jobs:
+  syntax-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Check JS syntax
+        run: node -c tracking.js
