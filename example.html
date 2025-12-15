@@ -1,81 +1,85 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Event Tracking Demo</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: #f7f7f9;
-            color: #222;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 500px;
-            margin: 40px auto;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-            padding: 32px 24px;
-        }
-        h1 {
-            font-size: 2rem;
-            margin-bottom: 0.5em;
-        }
-        p {
-            margin-bottom: 1.5em;
-        }
-        .track {
-            display: inline-block;
-            padding: 12px 24px;
-            background: #0078d7;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: 500;
-            transition: background 0.2s;
-        }
-        .track:hover {
-            background: #005fa3;
-        }
-        .note {
-            font-size: 0.95em;
-            color: #555;
-            margin-top: 2em;
-        }
-        .event-log {
-            background: #f0f4fa;
-            border-radius: 4px;
-            padding: 12px;
-            margin-top: 1em;
-            font-size: 0.95em;
-            color: #333;
-        }
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: #f7f7f9;
+        color: #222;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 500px;
+        margin: 40px auto;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+        padding: 32px 24px;
+      }
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 0.5em;
+      }
+      p {
+        margin-bottom: 1.5em;
+      }
+      .track {
+        display: inline-block;
+        padding: 12px 24px;
+        background: #0078d7;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: 500;
+        transition: background 0.2s;
+      }
+      .track:hover {
+        background: #005fa3;
+      }
+      .note {
+        font-size: 0.95em;
+        color: #555;
+        margin-top: 2em;
+      }
+      .event-log {
+        background: #f0f4fa;
+        border-radius: 4px;
+        padding: 12px;
+        margin-top: 1em;
+        font-size: 0.95em;
+        color: #333;
+      }
     </style>
-    
+  </head>
+  <body>
     <div class="container">
-        <h1>Event Tracking Demo</h1>
-        <p>
-            Click the button below to trigger a tracked event. This demonstrates unobtrusive event tracking using vanilla JavaScript and Google Analytics.<br>
-            <span class="note">(For demo purposes, events are logged to the page instead of sent to Google Analytics.)</span>
-        </p>
-        <a class="track" href="#"
-            data-action="Click"
-            data-category="Demo"
-            data-label="Tracked Link">Tracked Link</a>
-        <div class="event-log" id="event-log" aria-live="polite"></div>
+      <h1>Event Tracking Demo</h1>
+      <p>
+        Click the button below to trigger a tracked event. This demonstrates unobtrusive event
+        tracking using vanilla JavaScript and Google Analytics.<br />
+        <span class="note"
+          >(For demo purposes, events are logged to the page instead of sent to Google
+          Analytics.)</span
+        >
+      </p>
+      <a class="track" href="#" data-action="Click" data-category="Demo" data-label="Tracked Link">
+        Tracked Link
+      </a>
+      <div class="event-log" id="event-log" aria-live="polite"></div>
     </div>
     <script>
-    // Mock Google Analytics function for demo purposes
-    function ga() {
-        const log = document.getElementById('event-log');
-        const args = Array.from(arguments).map(String).join(', ');
+      // Mock Google Analytics function for demo purposes
+      function ga() {
+        const log = document.getElementById("event-log");
+        const args = Array.from(arguments).map(String).join(", ");
         log.textContent = `GA Event: ${args}`;
-        console.log('GA Event:', arguments);
-    }
+        console.log("GA Event:", arguments);
+      }
     </script>
     <script src="tracking.js"></script>
-</body>
+  </body>
 </html>

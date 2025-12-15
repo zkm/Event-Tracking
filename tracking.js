@@ -21,7 +21,7 @@ function trackEventHandler(event) {
   // For demo: show tracking event before navigating
   event.preventDefault();
   if (element.tagName === "A" && element.href) {
-    setTimeout(function() {
+    setTimeout(function () {
       window.open(element.href, "_self");
     }, 800); // Delay navigation so user can see the event log
   }

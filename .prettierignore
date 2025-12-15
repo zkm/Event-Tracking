@@ -1,0 +1,8 @@
+node_modules/
+build/
+dist/
+.pnp.cjs
+.pnp.loader.mjs
+.github/workflows/*.yml
+shiftleft.yml
+README.md
