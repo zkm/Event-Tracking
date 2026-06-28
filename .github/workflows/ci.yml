@@ -21,7 +21,7 @@ jobs:
         run: corepack enable
 
       - name: Install dependencies
-        run: yarn install --non-interactive
+        run: yarn install --immutable
 
       - name: Verify tracking.js parses
         run: node --check tracking.js
